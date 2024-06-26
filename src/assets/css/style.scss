@@ -1,0 +1,332 @@
+
+
+body{
+    padding: 0;
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+}
+
+*{
+    box-sizing: border-box;
+}
+#root{
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.container{
+    max-width: 1170px;
+    margin: 0  auto;
+    display: block;
+}
+
+.header{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    z-index: 99;
+    padding: 30px 0;
+    .flex-wrap{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        .navigations{
+            nav{
+                >ul{
+                    display: flex;
+                    align-items: center;
+                    column-gap: 15px;
+                    list-style: none;
+                    padding: 0;
+                    margin: 0;
+                    >li{
+                        position: relative;
+                        a{
+                            display: block;
+                            text-decoration: none;
+                            padding: 0;
+                            margin: 0;
+                            font-size: 17px;
+                            color: #fff;
+                            font-family: "Poppins", sans-serif;
+                            font-weight: 500;
+                        }
+                        &.has-dropdown{
+                            .sub-menu{
+                                position: absolute;
+                                width: 250px;
+                                box-shadow: 0 0 10px #ccc;
+                                top: 100%;
+                                opacity: 0;
+                                padding: 0;
+                                margin: 0;
+                                visibility: hidden;
+                                transition-duration: 0.6s;
+                                >li{
+                                    list-style: none;
+                                    a{
+                                        padding:5px 15px;
+                                        display: block;
+                                    }
+                                }
+                            }
+                            &:hover{
+                                .sub-menu{
+                                    opacity: 1;
+                                    visibility: visible;
+                                }  
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .login-signup{
+            display: flex;
+            align-items: center;
+            column-gap: 10px;
+            a{
+                font-size: 17px;
+                display: block;
+                color: #fff;
+                text-decoration: none;  
+                padding: 10px 25px;
+                border-radius: 4px;
+                &.active{
+                    background: #DF6951;
+                }
+            }
+        }
+    }
+}
+
+.banner-main{
+    background: url(../images/banner-img.png) no-repeat;
+    background-size: cover;
+    .ban-caption{
+        padding: 300px 0;
+        max-width: 844px;
+        .home-ttl{
+            font-size: 58px;
+            line-height: 64px;
+            color: #fff;
+            font-weight: 600;
+            margin: 0;
+            max-width: 631px;
+        }
+        .mn-form{
+            border-radius: 10px;
+            background:#f3f3f34d;
+            padding: 30px 30px;
+            margin-top: 30px;
+            .list-form{
+                display: flex;
+                align-items: flex-start;
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                .form-grp{
+                    width: 33.33%;
+                    position: relative;
+                    padding:0 15px;
+                    &::before{
+                        content: '';
+                        width: 2px;
+                        height: 80%;
+                        position: absolute;
+                        left: 0;
+                        top: 50%;
+                        display: block;
+                        background: #fff;
+                        transform: translate(0, -50%);
+                    }   
+                    .field{
+                        width: 100%;
+                        background: transparent;
+                        color: #fff;
+                        font-weight: 500;
+                        border: 0;
+                        outline:none;
+                        font-size: 18px;
+                        padding: 10px 10px;
+                        box-shadow: initial;
+                        font-family: "Poppins", sans-serif;
+                        &::placeholder{
+                            color: #fff;
+                            font-weight: 500;
+                            font-family: "Poppins", sans-serif;
+                        }
+                    }
+                    &:first-child{
+                        padding-left: 0;
+                        &::before{
+                            display: none;
+                        }
+                    }
+                    &:last-child{
+                        padding-left: 0;
+                        &::before{
+                            display: none;
+                        }
+                    }
+                    .btn-sm{
+                        background: #DF6951;
+                        padding: 10px 25px;
+                        width: 100%;
+                        text-align: center;
+                        border-radius: 5px;
+                        border: 0;
+                        outline: none;
+                        font-family: "Poppins", sans-serif;
+                        font-weight: 500;
+                        color: #fff;
+                        cursor: pointer;
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.login-page{
+    padding-top: 250px;
+}
+
+.contact-main{
+    background: url(../images/about-banner.png) no-repeat;
+    background-size: cover;
+    position: relative;
+    &::before{
+        content: '';
+        width: 100%;
+        height: 100%;
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: #000;
+        opacity: 0.1;
+    }
+    .contact-heading{
+        padding: 100px 0;
+        text-align: center;
+        position: relative;
+        z-index: 9;
+        h1{
+            color: #ffffff;
+        }
+    }
+}
+
+.contact-form{
+    
+}
+
+.form-inner{
+    background: #EDEDED;
+    max-width: 400px;
+    display: block;
+    margin: 0  auto;
+    padding: 30px;
+    .form-grp{
+        margin-top: 20px;
+        .form-filed{
+            padding: 20px 25px;
+            background: #ffffff;
+            border: 0;
+            outline: none;
+            width: 100%;
+            font-size: 16px;
+            font-family: "Poppins", sans-serif;
+            &::placeholder{
+                color: #000;
+                font-family: "Poppins", sans-serif;
+            }
+        }
+        .btn-sm{
+            background: #DF6951;
+            padding: 10px 25px;
+            width: 100%;
+            text-align: center;
+            border-radius: 5px;
+            border: 0;
+            outline: none;
+            font-family: "Poppins", sans-serif;
+            font-weight: 500;
+            color: #fff;
+            cursor: pointer;
+            font-size: 18px;
+        }
+    }
+}
+
+.tour-packages{
+    max-width: 1000px;
+    margin: 0 auto;
+    display: block;
+    background: #F8F8F8;
+    // box-shadow: 0 0 10px #ccc;
+    padding: 40px;
+    position: relative;
+    margin-top: -100px;
+
+    .package-list{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        column-gap:2%;
+        .lst-itm{
+            width: 32%;
+            background: #ffffff;
+            padding: 15px;
+            margin: 15px 0;
+            .img-fluid{
+                width: 100%;
+                height: 300px;
+                object-fit: cover;
+            }
+        }
+    }
+}
+
+.TourDetails-banner{
+    img{
+        height: 360px;
+        object-fit: cover;
+        width: 100%;
+    }
+}
+
+.details-btm{
+    .flex-details{
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 3%;
+        .details-cont{
+            position: relative;
+            display: flex;
+            column-gap: 20px;
+            padding: 20px;
+            box-shadow: 0 0 10px #ddd;
+            margin: 20px 0;
+            img{
+                width: 300px;
+                object-fit: cover;
+            }
+            .inner-details{
+                position: relative;
+                .find-location{
+                    position: absolute;
+                    right: 0;
+                    bottom: 0;
+                }   
+            }
+            
+        }
+    }
+}
