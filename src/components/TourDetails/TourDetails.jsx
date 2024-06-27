@@ -1,11 +1,18 @@
 import React, {useState, useEffect} from 'react'
 import { Link, useLocation } from 'react-router-dom';
 import imgBanner from "../../assets/images/about-banner.png"
+import BookTour from '../BookTour/BookTour';
 function TourDetails () {
+
+  const [open, setOpen] = useState(false);
+
+  const [bookedPackage, setbookedPackage] = useState(); 
+
+  const handleOpen = (res) => {setbookedPackage(res); setOpen(true);};
 
 
   const location = useLocation();
-  console.log(location, "data")
+  // console.log(location, "data")
 
    return (
     <>
@@ -27,7 +34,7 @@ function TourDetails () {
                                   <h3>{name}</h3>
                                   <p>{info.slice(0, 300)}<em>...</em></p>
                                   <Link to={location} target='_blank' className='find-location'>Location</Link>
-                                  <a href='#'>Book This Tour</a>
+                                  <div onClick={() => handleOpen(res)}>Book This Tour</div>
                               </div>
                             </div>
                           )
@@ -35,7 +42,10 @@ function TourDetails () {
                       }
               </div>
           </div>
+          {open && <BookTour open={open} setOpen={setOpen} data={bookedPackage} />}
       </div>
+
+      
     </>
   )
 }
